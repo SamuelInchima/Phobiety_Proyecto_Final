@@ -688,10 +688,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fbf1ec7f18bf8543bb1227727a467c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 6
   mouseSensitivity: 500
   playerCamera: {fileID: 330585546}
   gravity: -9.81
+  jumpHeight: 1.5
   groundCheck: {fileID: 682811541}
   groundDistance: 0.4
   groundMask:

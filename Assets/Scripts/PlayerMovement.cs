@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     // Fuerza con la que caemos al suelo.
     public float gravity = -9.81f;
     // Variable para guardar la velocidad de caida actual.
+    public float jumpHeight = 3f; // Altura del salto
     private Vector3 velocity;
     // Referencia a un objeto vacio en los pies del jugador para saber si toca el suelo.
     public Transform groundCheck;
@@ -91,5 +92,13 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         // Le decimos al CharacterController que nos mueva hacia abajo.
         controller.Move(velocity * Time.deltaTime);
+
+        // 5. SALTO
+        // Si el jugador presiona Espacio (Jump) y está tocando el suelo...
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            // Fórmula física para calcular la fuerza necesaria del salto
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
     }
 }
