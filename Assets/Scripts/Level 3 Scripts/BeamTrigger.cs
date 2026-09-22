@@ -33,7 +33,8 @@ public class BeamTrigger : MonoBehaviour
             BalanceSystem balance = other.GetComponent<BalanceSystem>();
             if (balance != null)
             {
-                balance.StopBalanceMiniGame();
+                // Se elimina la llamada a StopBalanceMiniGame(). 
+                // Solo reiniciamos el activador para futuros cruces.
                 miniGameActivated = false;
             }
         }
